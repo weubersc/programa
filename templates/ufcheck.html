@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>APURAÇÃO DA PESQUISA</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo2.css') }}">
+</head>
+<body>
+	<div >
+	    <h1>Programa - Tabulação da pesquisa - Unidade de Federação</h1>
+	    <div>
+		<form action="/ufcheck_exec" method="POST" >
+        	<fieldset>  
+          	<div>
+           	<label for="semestre">SEMESTRE</label>
+            	  <select  name="SEMES" value="submit">
+                	<option value="{{"PRIMEIRO"}}">Primeiro</option>
+                	<option value="{{"SEGUNDO"}}">Segundo</option>
+             	  </select>
+          	</div>                     
+                <div>
+                  <label for="ANO">ANO</label>
+                   <select name="SANO">
+                    {% for ano in lano %}
+                        <option value="{{ano}}">{{ano}}</option>
+                    {% endfor %}                      
+                   </select>
+                </div>
+                <div>
+                {% for geo in lgeo %}
+                <ul>
+                <li><input type="checkbox" name="SCHECK" value={{geo}}>{{geo}}</li>
+                </ul> 					     
+		{% endfor %} 
+		 </div>
+		  <button type="submit" >Rodar</button>
+                </form>
+	    </div>
+        </div>
+  
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>APURAÇÃO DA PESQUISA</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
+</head>
+<body>
+	<div id="teste">
+	    <h1>Programa - Tabulação da pesquisa - Brasil</h1>
+	    <div>
+		<form action="/brasil_exec" method="POST" >
+        	<fieldset>  
+          	<div>
+           	<label for="semestre">SEMESTRE</label>
+            	  <select  name="SEMES" value="submit">
+                	<option value="{{"PRIMEIRO"}}">Primeiro</option>
+                	<option value="{{"SEGUNDO"}}">Segundo</option>
+             	  </select>
+          	</div>
+
+                <div>
+                  <label for="ANO">ANO</label>
+                   <select name="SANO">
+                    {% for ano in lano %}
+                        <option value="{{ano}}">{{ano}}</option>
+                    {% endfor %}                      
+                   </select>
+                </div>
+		  <button type="submit" >Rodar</button>
+                </form>
+	    </div>
+        </div>
+  
+</body>
+</html>
